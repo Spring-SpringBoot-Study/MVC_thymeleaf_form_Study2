@@ -37,8 +37,9 @@
         <div>판매 여부</div>
         <div>
             <div class="form-check">
-                <input type="checkbox" id="open" name="open" class="form-check-input">
-                <input type="hidden" name="_open" value="on"/> <!-- 히든 필드 추가(체크 박스가 체크되어 있을 시에는 _open은 무시, 그렇지 않을 경우에만 Spring MVC가 _open만 있는 것을 확인하고, open이 체크되지 않았다고 인식함 -> open은 null이 아닌 false로 인식)-->
+                <input type="checkbox" id="open" th:field="*{open}" class="form-check-input"> <!-- th:field가 open에 대한 히든 필드까지 추가 -->
+                <!-- <input type="hidden" name="_open" value="on"/> -->
+                <!-- 히든 필드 추가(체크 박스가 체크되어 있을 시에는 _open은 무시, 그렇지 않을 경우에만 Spring MVC가 _open만 있는 것을 확인하고, open이 체크되지 않았다고 인식함 -> open은 null이 아닌 false로 인식)-->
                 <label for="open" class="form-check-label">판매 오픈</label>
             </div>
         </div>
